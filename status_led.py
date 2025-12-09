@@ -1,6 +1,29 @@
 # status_led.py
 # Control the ESP32-C3-DevKitM-1 onboard RGB LED (WS2812 on GPIO 8)
 
+# Ce module fournit des fonctions simples pour :
+# - allumer la LED dans différentes couleurs (rouge, vert, bleu, blanc),
+# - régler la luminosité en pourcentage (0–100 %),
+# - éteindre la LED.
+
+# from status_led import StatusLed 
+
+# led = StatusLed(brightness=20)  # création de l'objet led avec 20 % de luminosité
+
+# led.red()         
+# led.green()
+# led.blue()
+# led.yellow()
+# led.magenta()
+# led.cyan()
+# led.set_brightness(50)
+# led.white()  # blanche à 50%
+# led.off()
+
+# led.blink(255, 0, 0, delay=0.1, count=3)   # clignotement rouge de 3 fois 0.1s
+# led.pulse(0, 0, 255)                       # effet "respiration" bleu
+
+
 from machine import Pin
 import neopixel
 import time
@@ -102,3 +125,4 @@ class StatusLed:
             time.sleep(delay)
 
         self.off()
+
